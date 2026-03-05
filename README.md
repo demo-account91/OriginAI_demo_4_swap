@@ -1,42 +1,159 @@
 # OriginAI_demo_4_swap
 
-OriginAI is a full-stack prototype designed for AI content detection and digital forensics. This tool helps users verify the authenticity of text, audio, images, and videos in an era of increasing synthetic media.
+OriginAI is a **full-stack prototype for AI content detection and digital forensics**.
+It allows users to verify whether **text, audio, images, or videos are AI-generated**, helping combat deepfakes, synthetic media, and AI-based scams.
 
-## Project Structure
+---
 
-- **frontend/**: Vanilla HTML, CSS, and JS interface.
-- **backend/**: FastAPI powered Python server with simulated detection logic.
-- **backend/detectors/**: Specialized modules for different media types.
+# Project Structure
 
-## Features
+```
+OriginAI_demo_4_swap/
+│
+├── backend/
+│   ├── main.py
+│   ├── detectors/
+│   │   ├── text_detector.py
+│   │   ├── audio_detector.py
+│   │   ├── image_detector.py
+│   │   ├── video_detector.py
+│   ├── requirements.txt
+│
+├── frontend/
+│   ├── assets/
+│   │   ├── Images/
+│   │   │   └── BACKGROUND_IMAGE.png
+│   │   │
+│   │   ├── Logos/
+│   │   │   ├── ORIGINAI.png
+│   │   │   ├── TEXT_DETECTOR.jpeg
+│   │   │   ├── AUDIO_DETECTOR.jpeg
+│   │   │   ├── PHOTO_DETECTOR.jpeg
+│   │   │   └── VIDEO_DETECTOR.jpeg
+│   │
+│   ├── index.html
+│   ├── text.html
+│   ├── audio.html
+│   ├── photo.html
+│   ├── video.html
+│   ├── style.css
+│   ├── script.js
+│
+└── README.md
+```
 
-1. **Text Detector**: Analyzes text for AI-generated patterns and plagiarism.
-2. **Audio Detector**: Detects voice cloning and deepfake audio (supports live recording).
-3. **Photo Detector**: Identifies GAN and Diffusion model signatures in images.
-4. **Video Detector**: Scans videos for deepfake artifacts.
+---
 
-## How to Run
+# Features
 
-### Backend
-1. Navigate to the `backend/` directory.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Start the server:
-   ```bash
-   python main.py
-   ```
-   The API will be available at `http://127.0.0.1:8000`.
+### Text Detector
 
-### Frontend
-1. Open `frontend/index.html` in any modern web browser.
-2. Ensure the backend is running to enable the detection features.
+* Paste or type text
+* Detects **AI-generated probability**
+* Returns **plagiarism percentage**
 
-## Hackathon Explanation
-This project serves as a **functional prototype** for hackathon demonstrations. The current "forensics" logic uses randomized simulation to represent detection results. 
+### Audio Detector
 
-## Future Upgrades
-- **Real ML Models**: Integrate HuggingFace Transformers, OpenAI's Whisper, and specialized deepfake detection models (like MesoNet or EfficientNet).
-- **Metadata Analysis**: Extract and verify EXIF data and digital signatures.
-- **Blockchain Verification**: Store original content hashes on-chain for immutable proof of origin.
+* Upload audio file or record audio
+* Detects **AI voice cloning / synthetic speech**
+
+### Photo Detector
+
+* Upload images
+* Detects **GAN or diffusion generated images**
+
+### Video Detector
+
+* Upload videos
+* Detects **deepfake manipulation artifacts**
+
+---
+
+# How to Run the Project
+
+## 1. Start the Backend
+
+Open terminal and navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the FastAPI server:
+
+```bash
+python main.py
+```
+
+The backend API will run at:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+# 2. Start the Frontend
+
+Navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+Run a local server:
+
+```bash
+python -m http.server 5500
+```
+
+Open in browser:
+
+```
+http://localhost:5500
+```
+
+Then open:
+
+```
+index.html
+```
+
+⚠️ Make sure the **backend server is running** before using the detectors.
+
+---
+
+# Hackathon Prototype Note
+
+OriginAI is built as a **hackathon demonstration prototype**.
+
+The current detectors simulate AI detection logic to demonstrate:
+
+* Multi-modal AI forensics
+* Content verification workflows
+* Scalable architecture for real AI models
+
+---
+
+# Future Improvements
+
+* Integration of **real deepfake detection models**
+* **Audio deepfake detection using ML**
+* **Image GAN detection models**
+* **Metadata & EXIF analysis**
+* **AI scam detection module**
+* **Blockchain proof of content origin**
+
+---
+
+# Built For
+
+**AI Forensics | Deepfake Detection | Hackathon Prototype**
+
+OriginAI demonstrates how AI can help **protect digital authenticity in the era of generative media.**
