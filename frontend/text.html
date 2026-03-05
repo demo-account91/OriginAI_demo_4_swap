@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Detector - OriginAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-text">OriginAI</a>
+    </header>
+
+    <div class="container">
+        <div class="detector-form">
+            <h2>AI Text Forensics</h2>
+            <p>Analyze text for AI generation and plagiarism.</p>
+            <textarea id="textInput" placeholder="Paste your text here (Min 100 characters recommended)..."></textarea>
+            <button id="analyzeBtn" class="submit-btn" onclick="analyzeText()">RUN FORENSICS</button>
+            
+            <div id="loading" class="loading">Analyzing text patterns...</div>
+
+            <div id="results">
+                <h3>Forensics Report</h3>
+                <div class="result-item">AI Content Probability: <span id="aiPerc" class="percentage">0%</span></div>
+                <div class="result-item">Plagiarism Level: <span id="plagPerc" class="percentage">0%</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

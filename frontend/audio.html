@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Detector - OriginAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-text">OriginAI</a>
+    </header>
+
+    <div class="container">
+        <div class="detector-form">
+            <h2>Audio Verification</h2>
+            <p>Upload an audio file or record directly to detect synthesis.</p>
+            
+            <button id="recordBtn" class="submit-btn record-btn">START RECORDING</button>
+            <div id="recordingStatus" style="color: red; margin-bottom: 10px; display: none;">Recording...</div>
+            <audio id="recordedAudio" controls style="display: none; width: 100%; margin-bottom: 20px;"></audio>
+
+            <div style="text-align: center; margin: 20px 0;">- OR -</div>
+
+            <input type="file" id="audioUpload" accept="audio/*">
+            <button id="analyzeBtn" class="submit-btn" onclick="analyzeAudio()">VERIFY AUDIO</button>
+
+            <div id="loading" class="loading">Analyzing frequency and metadata...</div>
+
+            <div id="results">
+                <h3>Forensics Report</h3>
+                <div class="result-item">AI Generated: <span id="aiStatus" class="percentage">Unknown</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
