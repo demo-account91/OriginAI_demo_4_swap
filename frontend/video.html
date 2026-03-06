@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Detector - OriginAI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<video autoplay muted loop id="background-video">
+<source src="assets/Images/BACKGROUND_VIDEO.mp4" type="video/mp4">
+</video>
+
+<header>
+<a href="index.html" class="logo-text">OriginAI</a>
+</header>
+
+<div class="container">
+<div class="detector-form">
+
+<h2>Video Forensics</h2>
+<p>Upload a video to analyze for deepfake artifacts.</p>
+
+<input type="file" id="videoUpload" accept="video/*">
+
+<button id="analyzeBtn" class="submit-btn" onclick="analyzeVideo()">UNMASK VIDEO</button>
+
+<div id="loading" class="loading">Analyzing frames and lip-sync...</div>
+
+<div id="results">
+<h3>Forensics Report</h3>
+<div class="result-item">AI Generated: <span id="aiStatus" class="percentage">Unknown</span></div>
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
